@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -Flg -a ls .. -Flg -a ls /boot -Flg -a
