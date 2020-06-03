@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Flg -a ls .. -Flg -a ls /boot -Flg -a
+ls /home/vagrant/holberton-system_engineering-devops/0x00-shell_basics -la ls .. -la ls /boot -la
