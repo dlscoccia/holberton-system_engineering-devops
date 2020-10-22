@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script to print x10
+
+i=1
+while (( i < 11 ))
+    do
+        if [ $i -ne 9 ];
+            then
+                echo "Holberton School"
+            else
+                echo "Hi"
+        fi
+    (( i++ ))
+done
