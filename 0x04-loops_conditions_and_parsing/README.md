@@ -1,13 +1,17 @@
 ![bash](https://blog.desdelinux.net/wp-content/uploads/2019/01/bash-logo.jpg.webp)
+___
+___
 
 # [0x04]. Bash - Loops, conditions and parsing
 
-## What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
+
+## :boom: What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
 
 Running a command through /usr/bin/env has the benefit of looking for whatever the default version of the program is in your current environment.
 This way, you don't have to look for it in a specific place on the system, as those paths may be in different locations on different systems. As long as it's in your path, it will find it.
 
-## How to use while,  until and for loops
+
+## :boom: How to use while,  until and for loops
 
 In this section you'll find for, while and until loops.
 
@@ -18,52 +22,46 @@ The while executes a piece of code if the control expression is true, and only
 The until loop is almost equal to the while loop, except that the code is executed while the control expression evaluates to false.
 
 If you suspect that while and until are very similar you are right.
-¨¨¨
-For sample
+
+##### For Example:
 
         #!/bin/bash
         for i in $( ls ); do
             echo item: $i
         done
 
-¨¨¨
 
 On the second line, we declare i to be the variable that will take the different values contained in $( ls ).
+
 The third line could be longer if needed, or there could be more lines before the done (4).
 'done' (4) indicates that the code that used the value of $i has finished and $i can take a new value.
 This script has very little sense, but a more useful way to use the for loop would be to use it to match only certain files on the previous example
 
-### For Example:
+##### For Example:
 
-¨¨¨
         #!/bin/bash
         for i in `seq 1 10` ;
         do
                 echo $i
         done
-¨¨¨
 
-### While Example
+### While Example:
 
-¨¨¨
          #!/bin/bash
          COUNTER=0
          while [  $COUNTER -lt 10 ]; do
              echo The counter is $COUNTER
              let COUNTER=COUNTER+1
          done
-¨¨¨
 
 ### Until Example:
 
-¨¨¨
          #!/bin/bash
          COUNTER=20
          until [  $COUNTER -lt 10 ]; do
              echo COUNTER $COUNTER
              let COUNTER-=1
          done
-¨¨¨
 
 ## How to use if,  else,  elif and case condition statements
 
@@ -77,24 +75,22 @@ There are various types of conditional statements in Bash:
     4. Nested
 
 The syntax of if, elseif, else is:
-¨¨¨
-if <test_expression>;  then
-  <command-to-execute>
-elif <test_expression>;  then
-  <command-to-execute>
-else
-  <command-to-execute>
-fi
-¨¨¨
+
+    if <test_expression>;  then
+        <command-to-execute>
+    elif <test_expression>;  then
+        <command-to-execute>
+    else
+        <command-to-execute>
+    fi
 
 ## How to use the cut command
 
 The cut command in UNIX is a command for cutting out the sections from each line of files and writing the result to standard output. It can be used to cut parts of a line by byte position, character and field. Basically the cut command slices a line and extracts the text. It is necessary to specify option with command otherwise it gives error. If more than one file name is provided then data from each file is not precedes by its file name.
 
 Syntax:
-¨¨¨
-cut OPTION... [FILE]...
-¨¨¨
+    cut OPTION... [FILE]...
+
 
 ## What are files and other comparison operators, and how to use them
 
