@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+# Script that shows its owns PID
+
 echo $$

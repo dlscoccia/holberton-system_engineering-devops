@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that kills Task 4 process by pid
+
+pid=$(pgrep -f 4-to_infinity_and_beyond)
+kill "$pid"
