@@ -1,7 +1,8 @@
 # Bash - 0x05. Processes and signals
 ## What is a PID [^1]
 
-    A PID (i.e., process identification number) is an identification number that is automatically assigned to each process when it is created on a Unix-like operating system.
+    A PID (i.e., process identification number) is an identification number that is automatically
+    assigned to each process when it is created on a Unix-like operating system.
 
 A process is an executing (i.e., running) instance of a program. Each process is guaranteed a unique PID, which is always a non-negative integer.
 
@@ -20,14 +21,14 @@ The PID is needed in order to terminate a frozen or otherwise misbehaving progra
 
 ___
 
-## What is a signal?
+## What is a signal? [^2]
 
     Signals are software interrupts.
 
 A robust program need to handle signals. This is because signals are a way to deliver asynchronous events to the application.
 A user hitting ctrl+c, a process sending a signal to kill another process etc are all such cases where a process needs to do signal handling.
 
-Linux Signals [^2]
+Linux Signals
 In Linux, every signal has a name that begins with characters SIG. For example :
 A SIGINT signal that is generated when a user presses ctrl+c. This is the way to terminate programs from terminal.
 A SIGALRM  is generated when the timer set by alarm function goes off.
@@ -54,5 +55,7 @@ As we already stated that two signals SIGKILL and SIGSTOP cannot be ignored. Thi
 ___
 
 References:
+
 [^1]: [linfo.org](http://www.linfo.org/pid.html)
+
 [^2]: [thegeekstuff.com](https://www.thegeekstuff.com/2012/03/linux-signals-fundamentals/)
