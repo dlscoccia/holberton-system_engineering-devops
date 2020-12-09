@@ -1,4 +1,4 @@
-# 
+#  0x0A Configuration management
 ## Puppet - Manifest Files
 In Puppet, all the programs which are written using Ruby programming language and saved with an extension of .pp are called manifests. In general terms, all Puppet programs which are built with an intension of creating or managing any target host machine is called a manifest. All the programs written in Puppet follow Puppet coding style.
 
