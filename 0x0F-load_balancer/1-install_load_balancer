@@ -1,0 +1,9 @@
+
+#!/usr/bin/env bash
+# sets up a load balancer
+sudo apt-get update
+sudo apt-get install haproxy
+echo ENABLED=1 | sudo tee /etc/default/haproxy
+sudo mv /etc/haproxy/haproxy.cfg{,.original}
+sudo wget https://transfer.sh/agSo7/haproxy.cfg -O /etc/haproxy/haproxy.cfg
+sudo service haproxy start
