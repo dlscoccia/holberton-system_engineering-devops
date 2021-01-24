@@ -1,9 +1,18 @@
-
 #!/usr/bin/env bash
-# sets up a load balancer
-sudo apt-get update
-sudo apt-get install haproxy
-echo ENABLED=1 | sudo tee /etc/default/haproxy
-sudo mv /etc/haproxy/haproxy.cfg{,.original}
-sudo wget https://transfer.sh/agSo7/haproxy.cfg -O /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+# Install haproxy
+CONFIG="frontend load_balancer
+    bind *:80
+    mode http
+    default_backend dlscoccia
+	backend dlscoccia
+    balance roundrobin
+    server web-01 34.75.179.163:80 check
+    server web-02 34.75.72.240:80 check"
+
+apt-get install --no-install-recommends software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-2.0 -y
+apt-get update -y
+apt-get install haproxy=2.0.\* -y
+echo "$CONFIG" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
+
